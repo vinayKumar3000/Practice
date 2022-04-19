@@ -1,0 +1,63 @@
+public class Main
+{
+
+    static int[][] arr={{0,1,1,1,0},
+                        {1,0,0,0,1},
+                        {1,1,0,1,1},
+                        {1,1,1,0,0},
+                        {0,1,0,1,0}};
+                        
+    
+    static int[] isVisisted=new int[5];          
+    
+    static int[] Queue=new int[5];
+    
+    static int src=3;
+	
+	public static void main(String[] args) {
+	
+	    //BFS has 2 arrays 
+	    //1.isVisisted with vertices as index -->0,1,2,3,4,5
+	        // with values 0 or 1 
+	    //2.Queue with every visted vertices as values 
+	
+	    BFS(arr,src);
+	
+	    printQueue();
+	    
+	}
+	public static void BFS(int[][] arr,int src){
+	    
+	    Queue[0]=src;
+	    isVisisted[src]=1;
+	    
+	    //i points to Queue from 0 to 4 and gets the visited vertex
+      	    //when u get the visited vertex ,u compare the edge from visited vertex to all other vertex 
+          	   //if there is edge and not visited then update Queue and isVisisted arrays
+	   //Its important to understand how j ,Queue, changes
+	    
+	    int j=0;
+	    for(int i=0;i<5;i++){
+	        
+	         
+	        for(int vertex=0;vertex<5;vertex++){
+	            
+	            if((arr[Queue[i]][vertex]==1) && (isVisisted[vertex]==0)){
+	                
+	                Queue[++j]=vertex;
+	                isVisisted[vertex]=1;
+	            }
+	            
+	        }
+	        
+	    }
+	}
+
+    public static void printQueue(){
+        
+        for(int i=0;i<5;i++){
+            
+            System.out.println(Queue[i]);
+        }
+    }
+}

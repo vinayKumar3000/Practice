@@ -1,0 +1,35 @@
+public class Main
+{
+    static int[] arr={11,22,33,44,55,66,77,88,99};
+    static int target=88;
+	public static void main(String[] args) {
+		int index=BinarySearch(arr,0,arr.length-1);
+		System.out.println("index "+index);
+	
+	}
+	
+	public static int BinarySearch(int[] arr,int l,int h){
+	   int mid=(l+h)/2;
+	   if(l<h){
+	       
+	       //increasing order of elements
+	            if(arr[mid]==target){
+	                return mid;
+	            }else if(arr[mid]<target){
+	           //target is on the right side so move l to mid+1 
+	                l=mid;
+	                return BinarySearch(arr,l,h);
+	            }else if(arr[mid]>target){
+	                //target is on the left side so move h to mid-1
+	                h=mid-1;
+	                return BinarySearch(arr,l,h);
+	            }
+	        }
+	   
+	    return -1;
+	}
+	
+}
+	
+
+

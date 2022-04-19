@@ -1,0 +1,61 @@
+
+
+public class Node
+{
+    int data;
+    Node next;
+    // here n is array pointing to 5 Node objects
+    //where each object has 1.data 2.next
+	static Node[] n=new Node[6];
+	public static void main(String[] args) {
+	    
+	    Init();
+	    addEdge(0,4);
+	    addEdge(0,3);
+	    addEdge(0,5);
+	    addEdge(1,5);
+	    addEdge(1,2);
+	    addEdge(2,3);
+	    addEdge(3,4);
+	    addEdge(3,5);
+	    addEdge(4,5);
+	    addEdge(5,2);
+	   
+	   printNodes();
+	}
+	
+	public static void Init(){
+	    for(int i=0;i<6;i++){
+	        n[i]=null;
+	    }
+	}
+	
+	public static void printNodes(){
+	 System.out.print(n[0].next.data);
+	    
+	}
+
+    public static void addEdge(int s,int d){
+         //create a newNode
+         Node newNode=new Node();
+         newNode.data=d;
+         newNode.next=null;
+       
+        if(n[s]==null){
+             //create a srcNode
+            Node srcNode=new Node();
+            srcNode.data=s;
+            srcNode.next=newNode;
+
+            n[s]=srcNode;
+            
+
+        }else{
+            Node t=n[s];         
+            while(t.next!=null){
+                t=t.next;
+            }
+            t.next=newNode;
+        }    
+    }   
+}

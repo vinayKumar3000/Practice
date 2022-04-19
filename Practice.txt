@@ -1,0 +1,23 @@
+Array List
+
+Linked List
+Double LL
+Queue
+Stack
+
+graphs
+	Adjacency matrix ==
+	Adjancency list ==
+
+Quick Sort
+Merge Sort
+Bubble Sort ==
+Insertion Sort ==
+Selection Sort ==
+
+Linear Search ==
+Binary Search ==
+
+Patterns ==
+prime ==
+Fibonacci ==
